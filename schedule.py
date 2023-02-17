@@ -101,7 +101,6 @@ class Schedule(csp.CSP):
         if assignment==None:
             print("the limit has been passed")
         else:
-
             for y in range(1,22):
                 print("jour: ",y)
                 for x in range(1,4):
@@ -125,16 +124,13 @@ class Schedule(csp.CSP):
                             if difficulte[0]==True:diff="Examen difficile"
                             else:diff="Examen facile"
 
-
                             print('| ', assignment[var], ' \ ', " Module: ",var,' \ ', " Enseignant: ",*pos['Professeur'],' \ ', " Niveau:",*pos["Semestre"],' \ ', diff,' \ ',labo, end=' |')
-
                             print()
                             if self.full_var[var][4]==True:
                                 if x+1==2: cr='Créneau de l\'examen technique en laboratoire: 12-15h'
                                 if x+1==3: cr='Créneau de l\'examen technique en laboratoire: 15-18h'
                                 print('|', (cr,y), ' \ ', 'Module: ',var+' LAB', end=' |')
                                 print()
-
 
             print("+","-"*50, "+")
 
@@ -266,8 +262,8 @@ if __name__ == '__main__':
 
     print('\n\n\n')
 
-
-    """    print('-'*30+"BackTracking model"+'-'*30)
+    """BT
+    print('-'*30+"BackTracking model"+'-'*30)
 
 # BackTracking search
   #Sans heuristique BT classique
@@ -329,8 +325,10 @@ if __name__ == '__main__':
     d = {'Heuristiques': Heuristiques ,'Temps d\'execusion': time_list,'Nbr de valeurs testés': count_list,'nbr de variable assignée': ass_val_list}
     df_temps_exec = pd.DataFrame(data=d)
     print(df_temps_exec )
+    """
 
 
+    """ FC
     print('-'*30+"Forward checking model"+'-'*30)
     #Forward checking search
 
@@ -395,11 +393,9 @@ if __name__ == '__main__':
     d2 = {'Heuristiques': Heuristiques ,'Temps d\'execusion': time_list,'Nbr de valeurs testés': count_list,'nbr de variable assignée': ass_val_list}
     df_temps_exec = pd.DataFrame(data=d2)
     print(df_temps_exec)
+    """
 
-
-"""
-
-
+    """ MAC
     print('-'*40+"MAC"+'-'*40)
 #MAC search
 
@@ -466,6 +462,98 @@ if __name__ == '__main__':
     d = {'Heuristiques': Heuristiques ,'Temps d\'execusion': time_list,'Nbr de valeurs testés': count_list,'nbr de variable assignée': ass_val_list}
     df_temps_exec = pd.DataFrame(data=d)
     print(df_temps_exec )
+    """
+    
+
+
+
+
+ 
+
+#Forward checking search
+
+  #Sans heuristique FC classique
+    #FC_basic=csp.solution_search(k, csp.first_unassigned_variable, csp.unordered_domain_values, csp.forward_checking)
+
+  #Avec heuristique
+    #Heuristique sur les variables 
+         #1/ mrv (Minimum remaining values)
+    #FC_mrv=csp.solution_search(k, csp.mrv, csp.unordered_domain_values, csp.forward_checking)
+         #2/ dom/deg: 
+    #FC_domdeg=csp.solution_search(k, csp.dom_wdeg, csp.unordered_domain_values, csp.forward_checking)
+
+    #Heuristique sur les valeurs 
+         #LCV least constraining values
+    #FC_lcv=csp.solution_search(k, csp.first_unassigned_variable, csp.lcv, csp.forward_checking)
+
+    #Combine heuristique sur les variable et les valeurs avec FC:
+         #1/ mrv (Minimum remaining values)
+    #FC_mrv_lcv=csp.solution_search(k, csp.mrv, csp.lcv, csp.forward_checking)
+         #2/ dom/deg: 
+    #FC_domdeg_lcv=csp.solution_search(k, csp.dom_wdeg, csp.lcv, csp.forward_checking)
+
+
+
+# BackTracking search
+  #Sans heuristique BT classique
+    BT_simple=csp.solution_search(k)
+
+  #Avec heuristique
+    #Heuristique sur les variables 
+         #1/ mrv (Minimum remaining values)
+    #BT_mrv=csp.solution_search(k, csp.mrv)
+
+         #2/ dom/deg: 
+    #BT_domdeg=csp.solution_search(k, csp.dom_wdeg)
+
+    #Heuristique sur les valeurs 
+         #LCV least constraining values
+    #BT_lcv=csp.solution_search(k, csp.first_unassigned_variable, csp.lcv)
+
+    #Combine heuristique sur les variable et les valeurs avec BT:
+         #1/ mrv (Minimum remaining values)
+    #BT_mrv_lcv=csp.solution_search(k, csp.mrv, csp.lcv)
+         #2/ dom/deg: 
+    #BT_domdeg_lcv=csp.solution_search(k, csp.dom_wdeg, csp.lcv)
+
+
+
+
+#MAC search
+
+  #Sans heuristique MAC classique
+    #MAC_simple=csp.solution_search(k, csp.first_unassigned_variable, csp.unordered_domain_values, csp.mac)
+
+  #Avec heuristique
+    #Heuristique sur les variables 
+         #1/ mrv (Minimum remaining values)
+    #MAC_mrv=csp.solution_search(k, csp.mrv, csp.unordered_domain_values, csp.mac)
+         #2/ dom/deg: 
+    #MAC_domdeg=csp.solution_search(k, csp.dom_wdeg, csp.unordered_domain_values, csp.mac)
+
+    #Heuristique sur les valeurs 
+         #LCV least constraining values
+    #MAC_lcv=csp.solution_search(k, csp.first_unassigned_variable, csp.lcv, csp.mac)
+
+    #Combine heuristique sur les variable et les valeurs avec MAC:
+         #1/ mrv (Minimum remaining values)
+    #MAC_mrv_lcv=csp.solution_search(k, csp.mrv, csp.lcv, csp.mac)
+         #2/ dom/deg: 
+    #MAC_domdeg_lcv=csp.solution_search(k, csp.dom_wdeg, csp.lcv, csp.mac)
+
+    
+    #m = csp.solution_search(k, csp.mrv, csp.lcv, csp.mac)
+
+
+    end=time.time()
+
+ 
+    k.display_all(BT_simple)
+   
+    
+    print("nombre de valeurs testé: "+str(k.counter))
+    print("temps d'execusion : "+str(end-begin) )
+    print("Nombre de variables assignées: "+str(k.nassigns))
     
 
 print('\n\n\n')
