@@ -1,0 +1,39 @@
+Semestre,Cours,Professeur,Difficile (TRUE/FALSE),Laboratoire (TRUE/FALSE),Position
+1,Satisfaction des contraintes,BESSIERE,True,False,0
+1, Mathématiques discrètes, BONZON,False,False,1
+1,Télécommunications,DUBOIS,False,False,2
+1, Conception logique, DAVIDSON,False,False,3
+1, Introduction à la programmation, MURPHY,False,True,4
+3,Analyse II,MAILY,True,False,5
+3,Probabilités et Statistiques,PERDUCA,False,False,6
+3, Programmation Orientée Objet, MEHAOUD,False,True,7
+3, Signaux et Systèmes, LEPEN,True,False,8
+3, Laboratoire des Circuits et Systèmes, AMROUN,False,False,9
+5, Principes des langages de programmation, BRUEL,False,False,10
+5, Graphics I, CORJON,False,False,11
+5, Analyse numérique, DUPONT,True,False,12
+5, Mathématiques Appliquées,MAILY,False,False,13
+5, Introduction aux base de données,SPANADOUKIS,True,True,14
+5, Systèmes d'exploitation, PERNAUT,False,False,15
+5, Architecture informatique II, MARIE,True,False,16
+5, Intelligence Artificielle, BENOIS,False,True,17
+5,Conception de systèmes numériques,DAVIDSON,False,False,18
+5, Réseaux de télécommunications, DURAND,False,False,19
+5, Traitement du signal numérique, LEROY,False,False,20
+5, Réseaux de communication II, MOREAU,False,False,21
+7, Recherche opérationnelle algorithmique, LEGRAND,False,False,22
+7, Algorithmique avancés, LEPETIT,False,False,23
+7, Bioinformatique structurelle,BONZON,False,False,24
+7, Algorithmes bioinformatiques, DELOBELLE,False,False,25
+7, Calcul scientifique avancé, DUPONT,False,False,26
+7, Complexité de calcul,GIANNOPOULOU,False,False,27
+7, Réseau de petri, DELOBELLE,False,False,28
+7, Gestion des systèmes d'information, SPANADOUKIS,False,False,29
+7, Communication homme-machine, ROUSSEAU,False,False,30
+7, TIC dans l'apprentissage, MARTIN,False,False,31
+7, Intelligence Artificielle II , BENOIS,True,True,32
+7, Reconnaissance des formes, BERTRAND,False,False,33
+7, Conception de circuits VLSI, GIRARD,False,False,34
+7, Apprentissage automatique par renforcement,FOURNIER,False,False,35
+7, Theorie des jeux, MOREAU,False,False,36
+7, Systèmes multi-agents ,DUMONT,False,False,37
